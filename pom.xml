@@ -65,7 +65,7 @@
         <name>Internal Release1</id>
         <url>http://54.226.181.104:8081/repository/GS-release/</url>
     </repository>
-    <sanpshotRepository>
+    <snapshotRepository>
         <id>deployment</id>
         <name>Internal Release</id>
         <url>http://54.226.181.104:8081/repository/GS_snapshot/</url>
