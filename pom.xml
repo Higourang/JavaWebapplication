@@ -94,7 +94,7 @@
         
     </pluginRepositories>
     
-    <distributionManagement>
+    <!--<distributionManagement>
         <repository>
             <id>nexus-releases</id>
             <name>Nexus Release Repository</name>
@@ -107,7 +107,8 @@
             <url>http://54.226.181.104:8081/repository/GS_snapshot/</url>
         </snapshotRepository>
         
-    </distributionManagement>
+    </distributionManagement> -->
+    
     
     <build>
         
