@@ -1,159 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+i<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>spring-boot-weds-framework</groupId>
-    <artifactId>parent</artifactId>
-    <version>0.0.2.RELEASE</version>
-    <packaging>pom</packaging>
-    <name>spring-boot-framework</name>
-    <description>spring-boot-weds-framework parent  for Spring Boot</description>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
-    </parent>
-    
-   <!-- <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
-        <com.google.guava.version>19.0</com.google.guava.version>
-        <springfox.version>2.5.0</springfox.version>
-        <pagehelper.version>4.2.1</pagehelper.version>
-        <javax.ws.rs-api.version>2.0</javax.ws.rs-api.version>
-        <org.apache.poi.version>3.10-beta2</org.apache.poi.version>
-        <jsch.version>0.1.46</jsch.version>
-        <commons-lang3.verison>3.3.2</commons-lang3.verison>
-        <commons-beanutils.version>1.8.3</commons-beanutils.version>
-        <javax.mail.version>1.4.1</javax.mail.version>
-    </properties> -->
-    
+    <groupId>com.in28minutes</groupId>
+    <artifactId>in28Minutes-first-webapp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
     <dependencies>
-        
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
         </dependency>
-        
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
-        
+ 		<dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.6</version>
+        </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>1.9.1</version>
         </dependency>
-        
-        <!--<dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-devtools</artifactId> 
-            <optional>true</optional> </dependency> -->
     </dependencies>
-    
-    <repositories>
-        
-        <repository>
-            <id>nexus</id>
-            <name>Nexus Repository</name>
-            <url>http://54.226.181.104:8081/repository/GS-release/</url>
-           <!--<url>http://127.0.0.1:8081/repository/maven-public/</url> -->
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            
-            <releases>
-                <enabled>true</enabled>
-            </releases>            
-        </repository>
-        
-    </repositories>
-    
-    <pluginRepositories>
-        
-        <pluginRepository>
-            <id>nexus</id>
-            <name>Nexus Plugin Repository</name>
-           <url>http://54.226.181.104:8081/repository/GS-release/</url>
-           <!-- <url>http://127.0.0.1:8081/repository/maven-public/</url> -->
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-        
-    </pluginRepositories>
-    
-    <!--<distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://54.226.181.104:8081/repository/GS-release/</url>            
-        </repository>
-        
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://54.226.181.104:8081/repository/GS_snapshot/</url>
-        </snapshotRepository>
-        
-    </distributionManagement> -->
-    
-    
+
     <build>
-        
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <!-- 打包插件 -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.4</version>
-                <!--<configuration>-->
-                    <!--<useUniqueVersions>false</useUniqueVersions>-->
-                <!--</configuration>-->
-            </plugin>
-            <!--发布jar包到内网的时候连源码一起 -->
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <verbose>true</verbose>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                        <showWarnings>true</showWarnings>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <path>/</path>
+                        <contextReloadable>true</contextReloadable>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>        
     </build>
-</project>
+ <!---  <distributionManagement>
+    <repository>
+        <id>deployment</id>
+        <name>Internal Release1</name>
+        <url>http://54.226.181.104:8081/repository/GS-release/</url>
+    </repository>
+    <snapshotRepository>
+        <id>deployment</id>
+        <name>Internal Release</name>
+        <url>http://54.226.181.104:8081/repository/GS_snapshot/</url>
+    </snapshotRepository>
+</distributionManagement>--->
 
+ </project>
